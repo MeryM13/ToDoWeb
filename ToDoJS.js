@@ -27,7 +27,7 @@ function addBtnClick() {
     const chk = document.createElement("input");
     chk.setAttribute("type", "checkbox");
     chk.setAttribute("class", "listCheckbox");
-    chk.onclick = currTask.changeDone();
+    //chk.onclick = currTask.changeDone();
     li.appendChild(chk);
 
     const text = document.createElement("span");
@@ -49,9 +49,4 @@ function addBtnClick() {
     ul.appendChild(li);
 
     str.value = "";
-}
-
-function taskDone(const )
-{
-
 }
