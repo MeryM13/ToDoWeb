@@ -1,0 +1,67 @@
+* {
+    font-family: "Lucida Console", monospace;
+    align-content: center;
+    flex: auto;
+    line-height: 10px;
+}
+
+body {
+    background-color: azure;
+}
+h1 {
+    color: aliceblue;
+}
+.input {
+    height: 30px;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+}
+
+#addBtn {
+    background-color: powderblue;
+    color: darkslategrey;
+    outline-color: darkslategrey;
+    font-style: inherit;
+    font-weight: bold;
+}
+
+#header {
+    background-color: darkcyan;
+    outline-color: black;
+    outline-width: 100px;
+    padding: 10px 10px 5px;
+}
+
+#list {
+    background-color: powderblue;
+    justify-content: center;
+}
+
+.listElement {
+    background-color: powderblue;
+    color: black;
+    text-line-through: none;
+}
+
+.finishedElement {
+    background-color: powderblue;
+    color: black;
+    text-line-through: single;
+}
+
+.selectedElement {
+    background-color: darkcyan;
+    color: aliceblue;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.listCheckbox{
+    padding-left: 10px;
+}
+
+.listButton {
+    padding-right: 10px;
+}
+

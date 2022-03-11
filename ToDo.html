@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo list</title>
+    <link rel="stylesheet" type="text/css" href="ToDoCSS.css">
+</head>
+<body>
+<div id="header">
+    <h1 class="input">Список дел</h1>
+    <input id="str" placeholder="Новый элемент списка" class="input"/>
+    <button id="addBtn" class="input">Создать</button>
+</div>
+<div id="listDiv">
+    <ol id="list"></ol>
+</div>
+<script>
+    const btn = document.getElementById("addBtn");
+    btn.addEventListener("mousedown", () => {
+        const str = document.getElementById("str");
+        const ul = document.getElementById("list");
+        const li = document.createElement("li");
+        li.setAttribute("class", "listElement");
+
+        const chk = document.createElement("input");
+        chk.setAttribute("type", "checkbox");
+        chk.setAttribute("class", "listCheckbox");
+        chk.addEventListener("change", () => {
+            if (chk.checked)
+            {
+                li.setAttribute("class","finishedElement");
+            }
+            else
+            {
+                li.setAttribute("class","listElement");
+            }
+        })
+        li.appendChild(chk);
+
+        const text = document.createElement("span");
+        text.innerText = str.value;
+        text.setAttribute("class", "listStr");
+        li.appendChild(text);
+
+        const delBtn = document.createElement("button");
+        delBtn.innerText = "x";
+        delBtn.setAttribute("class", "listButton");
+        delBtn.addEventListener("click", () =>
+        {
+            ul.removeChild(li);
+        })
+        li.appendChild(delBtn);
+        li.addEventListener("mouseover", () => {
+            li.setAttribute("class", "selectedElement");
+        })
+
+        ul.appendChild(li);
+
+        str.value = "";
+    })
+</script>
+</body>
+</html>
+
