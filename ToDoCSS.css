@@ -55,6 +55,15 @@ h1 {
     color: aliceblue;
     font-weight: bold;
     font-style: italic;
+    text-line-through: none;
+}
+
+.selectedFinishedElement {
+    background-color: darkcyan;
+    color: aliceblue;
+    font-weight: bold;
+    font-style: italic;
+    text-line-through: single;
 }
 
 .listCheckbox{
@@ -64,4 +73,3 @@ h1 {
 .listButton {
     padding-right: 10px;
 }
-
