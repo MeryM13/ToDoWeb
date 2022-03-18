@@ -47,7 +47,7 @@ h1 {
 .finishedElement {
     background-color: powderblue;
     color: black;
-    text-line-through: single;
+    text-line-through: double;
 }
 
 .selectedElement {
@@ -63,7 +63,7 @@ h1 {
     color: aliceblue;
     font-weight: bold;
     font-style: italic;
-    text-line-through: single;
+    text-line-through: double;
 }
 
 .listCheckbox{
