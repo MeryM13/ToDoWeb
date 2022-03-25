@@ -6,10 +6,7 @@ class task {
 
     changeDone()
     {
-        if (this.done === true)
-            this.done = false;
-        else if (this.done === false)
-            this.done = true;
+        this.done = !this.done;
     }
 }
 
@@ -131,6 +128,7 @@ function outputTask(ul, currTask)
     delBtn.innerText = "x";
     delBtn.setAttribute("class", "listButton");
     delBtn.addEventListener("click", () => {
+        countTasks();
         ul.removeChild(li);
         let removedItem = tasks.splice(tasks.indexOf(currTask), 1);
     })
