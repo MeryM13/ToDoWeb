@@ -39,15 +39,18 @@ h1 {
 }
 
 .listElement {
+    font-weight: normal;
     background-color: powderblue;
     color: black;
     text-line-through: none;
 }
 
 .finishedElement {
+    font-weight: normal;
     background-color: powderblue;
     color: black;
     text-line-through: double;
+    text-line-through-color: black;
 }
 
 .selectedElement {
@@ -64,6 +67,7 @@ h1 {
     font-weight: bold;
     font-style: italic;
     text-line-through: double;
+    text-line-through-color: aliceblue;
 }
 
 .listCheckbox{
@@ -72,4 +76,12 @@ h1 {
 
 .listButton {
     padding-right: 10px;
+}
+
+.clickable {
+    font-weight: normal;
+}
+
+.selectedClickable {
+    font-weight: bold;
 }
