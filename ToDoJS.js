@@ -13,10 +13,30 @@ class task {
     }
 }
 
-const showAllLabel = document.getElementById('showAllLbl');
-const showDoneLabel =  document.getElementById('showDoneLbl');
-const showNotDoneLabel =  document.getElementById('showNotDoneLbl');
+let taskCount = 0;
+let doneCount = 0;
+let notCount = 0;
 const tasks = [];
+
+function countTasks() {
+    taskCount = 0;
+    doneCount = 0;
+    notCount = 0;
+    for (let task of tasks) {
+        taskCount++;
+        if (task.done) {
+            doneCount++;
+        } else {
+            notCount++;
+        }
+    }
+    const showAllLabel = document.getElementById('showAllLbl');
+    const showDoneLabel =  document.getElementById('showDoneLbl');
+    const showNotDoneLabel =  document.getElementById('showNotDoneLbl');
+    showAllLabel.innerText = "All("+taskCount+")";
+    showDoneLabel.innerText = "Done("+doneCount+")";
+    showNotDoneLabel.innerText = "Not done("+notCount+")";
+}
 
 function addBtnClick() {
     const str = document.getElementById("str");
@@ -58,6 +78,7 @@ function showNotDoneLblClick() {
 }
 
 function outputTasks(mode) {
+    countTasks();
     const ul = document.getElementById("list");
     while (ul.firstChild)
         ul.removeChild(ul.firstChild);
@@ -93,7 +114,8 @@ function outputTask(ul, currTask)
         chk.checked = true;
     chk.addEventListener("click", () => {
         currTask.changeDone();
-        if (currTask.done === true)
+        countTasks();
+        if (currTask.done)
             li.setAttribute("class", "finishedElement");
         else
             li.setAttribute("class", "listElement");
@@ -114,13 +136,13 @@ function outputTask(ul, currTask)
     })
     li.appendChild(delBtn);
     li.addEventListener("mouseover", () => {
-        if (currTask.done === true)
+        if (currTask.done)
             li.setAttribute("class", "selectedFinishedElement");
         else
             li.setAttribute("class", "selectedElement");
     })
     li.addEventListener("mouseout", () => {
-        if (currTask.done === true)
+        if (currTask.done)
             li.setAttribute("class", "finishedElement");
         else
             li.setAttribute("class", "listElement");
