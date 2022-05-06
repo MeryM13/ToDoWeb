@@ -15,6 +15,18 @@ let doneCount = 0;
 let notCount = 0;
 const tasks = [];
 
+const addBtn = document.getElementById('addBtn');
+addBtn.addEventListener("click", addBtnClick);
+
+const showAllLabel = document.getElementById('showAllLbl');
+showAllLabel.addEventListener("click", showAllLblClick);
+
+const showDoneLabel =  document.getElementById('showDoneLbl');
+showDoneLabel.addEventListener("click", showDoneLblClick);
+
+const showNotDoneLabel =  document.getElementById('showNotDoneLbl');
+showNotDoneLabel.addEventListener("click", showNotDoneLblClick);
+
 function countTasks() {
     taskCount = 0;
     doneCount = 0;
@@ -27,9 +39,6 @@ function countTasks() {
             notCount++;
         }
     }
-    const showAllLabel = document.getElementById('showAllLbl');
-    const showDoneLabel =  document.getElementById('showDoneLbl');
-    const showNotDoneLabel =  document.getElementById('showNotDoneLbl');
     showAllLabel.innerText = "All("+taskCount+")";
     showDoneLabel.innerText = "Done("+doneCount+")";
     showNotDoneLabel.innerText = "Not done("+notCount+")";
@@ -45,9 +54,6 @@ function addBtnClick() {
 }
 
 function showAllLblClick() {
-    const showAllLabel = document.getElementById('showAllLbl');
-    const showDoneLabel =  document.getElementById('showDoneLbl');
-    const showNotDoneLabel =  document.getElementById('showNotDoneLbl');
     showAllLabel.setAttribute("class", "selectedClickable");
     showDoneLabel.setAttribute("class", "clickable");
     showNotDoneLabel.setAttribute("class", "clickable");
@@ -55,9 +61,6 @@ function showAllLblClick() {
 }
 
 function showDoneLblClick() {
-    const showAllLabel = document.getElementById('showAllLbl');
-    const showDoneLabel =  document.getElementById('showDoneLbl');
-    const showNotDoneLabel =  document.getElementById('showNotDoneLbl');
     showDoneLabel.setAttribute("class", "selectedClickable");
     showAllLabel.setAttribute("class", "clickable");
     showNotDoneLabel.setAttribute("class", "clickable");
@@ -65,9 +68,6 @@ function showDoneLblClick() {
 }
 
 function showNotDoneLblClick() {
-    const showAllLabel = document.getElementById('showAllLbl');
-    const showDoneLabel =  document.getElementById('showDoneLbl');
-    const showNotDoneLabel =  document.getElementById('showNotDoneLbl');
     showNotDoneLabel.setAttribute("class", "selectedClickable");
     showAllLabel.setAttribute("class", "clickable");
     showDoneLabel.setAttribute("class", "clickable");

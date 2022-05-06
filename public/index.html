@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <title>ToDo list</title>
     <link rel="stylesheet" type="text/css" href="css/ToDoCSS.css">
-    <script src="../src/ToDoJS.js"></script>
+    <script src="../src/index.js"></script>
 </head>
 <body>
 <div id="header">
     <h1 class="input">Список дел</h1>
     <input id="str" placeholder="Новый элемент списка" class="input"/>
-    <button id="addBtn" class="input" onclick="addBtnClick()">Создать</button>
+    <button id="addBtn" class="input">Создать</button>
 </div>
 <div id="listDiv">
     <ol id="list"></ol>
 </div>
 <div>
-    <span id="showAllLbl" onclick="showAllLblClick()" class="selectedClickable">All(0)</span>
-    <span id="showDoneLbl" onclick="showDoneLblClick()" class="clickable">Done(0)</span>
-    <span id="showNotDoneLbl" onclick="showNotDoneLblClick()" class="clickable">Not done(0)</span>
+    <span id="showAllLbl" class="selectedClickable">All(0)</span>
+    <span id="showDoneLbl" class="clickable">Done(0)</span>
+    <span id="showNotDoneLbl" class="clickable">Not done(0)</span>
 </div>
 </body>
 </html>
